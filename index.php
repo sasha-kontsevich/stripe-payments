@@ -94,19 +94,14 @@ include_once 'php/dbConnect.php';
 
     <section class="products">
         <div class="product">
-            <div class="img-wrapper"><img src="images/beginer.png" alt=""></div>
+            <div class="img-wrapper"><img src="images/beginer_gift.png" alt=""></div>
             <div class="text">
                 <h3 class="title">Beginer</h3>
                 <p class="description">Short description that describes this product for</p>
             </div>
             <div><span class="cost">$8</span><span class="period">/per month</span></div>
-            <!-- <form action="checkout.php" method="POST">
-                <input type="hidden" name="lookup_key" value="enterprise_plan" />
-                <input type="hidden" name="price_id" value="price_1OSIBpBEoBmn5hUYWHCKcw8P" />
-                <button id="checkout-and-portal-button" type="submit">Checkout</button>
-            </form> -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal"
-                data-bs-price="beginer">Subscribe</button>
+                data-bs-price="beginer" data-bs-planId="1">Subscribe</button>
             <div>
                 <p>This includes:</p>
                 <ul>
@@ -116,19 +111,15 @@ include_once 'php/dbConnect.php';
             </div>
         </div>
         <div class="product">
-            <div class="img-wrapper"><img src="images/professional.png" alt=""></div>
+            <div class="img-wrapper"><img src="images/professional_gift.png" alt=""></div>
             <div class="text">
                 <h3 class="title">Professional</h3>
                 <p class="description">Short description that describes this product for</p>
             </div>
             <div><span class="cost">$24</span><span class="period">/per month</span></div>
-            <!-- <form action="checkout.php" method="POST">
-                <input type="hidden" name="lookup_key" value="enterprise_plan" />
-                <input type="hidden" name="price_id" value="price_1OSI3OBEoBmn5hUYFAoUKwkX" />
-                <button id="checkout-and-portal-button" type="submit">Checkout</button>
-            </form> -->
+
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal"
-                data-bs-price="professional">Subscribe</button>
+                data-bs-price="professional" data-bs-planId="2">Subscribe</button>
 
             <div>
                 <p>This includes:</p>
@@ -139,19 +130,14 @@ include_once 'php/dbConnect.php';
             </div>
         </div>
         <div class="product">
-            <div class="img-wrapper"><img src="images/enterprise.png" alt=""></div>
+            <div class="img-wrapper"><img src="images/enterprise_gift.png" alt=""></div>
             <div class="text">
                 <h3 class="title">Enterprise</h3>
                 <p class="description">Short description that describes this product for</p>
             </div>
             <div><span class="cost">$42</span><span class="period">/per month</span></div>
-            <!-- <form action="checkout.php" method="POST">
-                <input type="hidden" name="lookup_key" value="enterprise_plan" />
-                <input type="hidden" name="price_id" value="price_1OSI99BEoBmn5hUYDHfQ7S6N" />
-                <button id="checkout-and-portal-button" type="submit">Checkout</button>
-            </form> -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#checkoutModal"
-                data-bs-price="enterprise">Subscribe</button>
+                data-bs-price="enterprise" data-bs-planId="3">Subscribe</button>
             <div>
                 <p>This includes:</p>
                 <ul>
@@ -170,7 +156,6 @@ include_once 'php/dbConnect.php';
                 </div>
                 <!-- Display a subscription form -->
                 <form id="subscrFrm">
-
                     <div class="modal-body">
                         <!-- Display status message -->
                         <div id="paymentResponse" class="hidden"></div>
@@ -191,7 +176,7 @@ include_once 'php/dbConnect.php';
                                 <!-- Stripe.js will create card input elements here -->
                             </div>
                         </div>
-
+                        <input type="hidden" id="subscr_plan" value="1">
                         <!-- Form submit button -->
                     </div>
                     <div class="modal-footer">

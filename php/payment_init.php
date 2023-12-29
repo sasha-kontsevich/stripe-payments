@@ -1,13 +1,13 @@
 <?php 
 // Include the configuration file 
-require_once 'php/config.php'; 
+require_once '../php/config.php'; 
  
 // Include the database connection file 
-include_once 'php/dbConnect.php'; 
+include_once '../php/dbConnect.php'; 
  
 // Include the Stripe PHP library 
 require_once '../vendor/autoload.php';
- 
+
 // Set API key 
 \Stripe\Stripe::setApiKey(STRIPE_API_KEY); 
  

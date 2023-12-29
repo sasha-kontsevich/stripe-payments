@@ -17,15 +17,16 @@ if (checkoutModal) {
     // Button that triggered the modal
     const button = event.relatedTarget
     // Extract info from data-bs-* attributes
-    const recipient = button.getAttribute('data-bs-price')
+    const price = button.getAttribute('data-bs-price')
+    const planId = button.getAttribute('data-bs-planId')
     // If necessary, you could initiate an Ajax request here
     // and then do the updating in a callback.
 
     // Update the modal's content.
     const modalTitle = checkoutModal.querySelector('.modal-title')
-    const modalBodyInput = checkoutModal.querySelector('.modal-body input')
+    const modalBodyPlanId = checkoutModal.querySelector('.modal-body #subscr_plan')
 
-    modalTitle.textContent = `New message to ${recipient}`
-    modalBodyInput.value = recipient
+    modalTitle.textContent = `Subscribe to ${price} plan`
+    modalBodyPlanId.value = planId
   })
 }

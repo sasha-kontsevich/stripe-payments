@@ -77,7 +77,7 @@ button:disabled {
 
 .product img {
     height: 100px;
-    width: 100px;
+    width: auto;
     border-radius: 3px;
 }
 

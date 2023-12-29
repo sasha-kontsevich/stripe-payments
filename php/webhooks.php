@@ -1,7 +1,12 @@
 <?php
+// Include the configuration file 
+require_once '../php/config.php'; 
+    
+// Include the database connection file 
+include_once '../php/dbConnect.php'; 
+ 
+// Include the Stripe PHP library 
 require_once '../vendor/autoload.php';
-require_once '../secrets.php';
-require_once '../php/connect.php';
 
 \Stripe\Stripe::setApiKey($stripeSecretKey);
 

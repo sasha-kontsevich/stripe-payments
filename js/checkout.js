@@ -40,7 +40,7 @@ async function handleSubscrSubmit(e) {
     let customer_email = document.getElementById("email").value;
     
     // Post the subscription info to the server-side script
-    fetch("payment_init.php", {
+    fetch("php/payment_init.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ request_type:'create_customer_subscription', subscr_plan_id: subscr_plan_id, name: customer_name, email: customer_email }),
@@ -77,7 +77,7 @@ function paymentProcess(subscriptionId, clientSecret, customerId){
         } else {
             // Successful subscription payment
             // Post the transaction info to the server-side script and redirect to the payment status page
-            fetch("payment_init.php", {
+            fetch("php/payment_init.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ request_type:'payment_insert', subscription_id: subscriptionId, customer_id: customerId, subscr_plan_id: subscr_plan_id,payment_intent: result.paymentIntent }),
@@ -85,7 +85,7 @@ function paymentProcess(subscriptionId, clientSecret, customerId){
             .then(response => response.json())
             .then(data => {
                 if (data.payment_id) {
-                    window.location.href = 'payment-status.php?sid='+data.payment_id;
+                    window.location.href = 'php/payment-status.php?sid='+data.payment_id;
                 } else {
                     showMessage(data.error);
                     setLoading(false);
