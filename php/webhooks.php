@@ -8,7 +8,7 @@ include_once '../php/dbConnect.php';
 // Include the Stripe PHP library 
 require_once '../vendor/autoload.php';
 
-\Stripe\Stripe::setApiKey($stripeSecretKey);
+\Stripe\Stripe::setApiKey(STRIPE_API_KEY);
 
 // Replace this endpoint secret with your endpoint's unique secret
 // If you are testing with the CLI, find the secret by running 'stripe listen'
@@ -37,7 +37,7 @@ switch ($event->type) {
         break;
     case 'customer.subscription.created':
         $subscription = $event->data->object; // contains a \Stripe\Subscription
-        $sql = "INSERT INTO `customers` (`id`, `email`, `name`) VALUES (NULL, `aaaaaa@aaaa.com`, `ff`)";
+        $sql = "";
         $result = mysqli_query($link, $sql);
         break;
     case 'customer.subscription.deleted':

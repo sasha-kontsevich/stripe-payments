@@ -5,11 +5,6 @@ require_once 'php/config.php';
 // Include the database connection file 
 include_once 'php/dbConnect.php';
 
-// Fetch plans from the database 
-// $sqlQ = "SELECT * FROM plans";
-// $stmt = $db->prepare($sqlQ);
-// $stmt->execute();
-// $stmt->store_result();
 ?>
 
 <!DOCTYPE html>
@@ -26,71 +21,13 @@ include_once 'php/dbConnect.php';
         crossorigin="anonymous"></script>
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/checkout.js" STRIPE_PUBLISHABLE_KEY="<?php echo STRIPE_PUBLISHABLE_KEY; ?>" defer></script>
-    <!-- <script src="js/customers.js" defer></script> -->
     <script src="js/prices.js" defer></script>
     <link rel="stylesheet" href="css/main.css" />
 
 </head>
 
 <body>
-    <header>
-        <span id="username">
-            <? $_SESSION['username'] ?>
-        </span>
-        <!-- SIGN UP -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal">
-            Sign Up
-        </button>
-        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sign Up</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="signupForm">
-                            <div class="mb-3">
-                                <label for="signupFormUsernameInput" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="signupFormUsernameInput" placeholder="John"
-                                    name="username">
-                            </div>
-                            <div class="mb-3">
-                                <label for="signupFormEmailInput" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="signupFormEmailInput"
-                                    placeholder="john@example.com" name="email">
-                            </div>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Sign Up</button>
-                            </div>
 
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- LOG IN -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Log In
-        </button>
-        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Log In</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Log In</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
 
     <section class="products">
         <div class="product">

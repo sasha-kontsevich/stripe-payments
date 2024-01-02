@@ -53,13 +53,13 @@ if (!empty($_GET['sid'])) {
 
 <body>
     <div class="container">
-        
-                <?php if (!empty($subscription_id)) { ?>
-                    <h1 class="<?php echo $status; ?>">
-                        <?php echo $statusMsg; ?>
-                    </h1>
-                    <div class="row">
-            <div class="col-md-6 offset-md-4">
+
+        <?php if (!empty($subscription_id)) { ?>
+            <h1 class="<?php echo $status; ?>">
+                <?php echo $statusMsg; ?>
+            </h1>
+            <div class="row">
+                <div class="col-md-6 offset-md-4">
                     <h4>Payment Information</h4>
                     <p><b>Reference Number:</b>
                         <?php echo $subscription_id; ?>
